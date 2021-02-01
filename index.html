@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/draggableview.css" />
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/dynamics.js@1.1.5/lib/dynamics.js"></script>
+</head>
+
+<body>
+    <!-- template for the modal component -->
+
+    <template id="modal-template">
+      <div class="modal-mask">
+        <div class="modal-wrapper" @click="$emit('close')">
+          <div class="modal-container" @click.stop>
+            <div class="modal-header">
+              <slot name="header"> OUR CONTACT </slot>
+            </div>
+
+            <div class="modal-body">
+              <slot name="body">
+                Add: Unit 3.1, E-town 2 Building, 3rd Fl, 364 Cong Hoa St., Tan
+                Binh Dist., Ho Chi Minh City, Viet Nam
+                <ul>
+                  <li>Tel: 84-(028)-3812-7145</li>
+
+                  <li>Fax: 84-(028)-3812-7148</li>
+
+                  <li>Email: bd@vn.isb.co.jp</li>
+                </ul>
+              </slot>
+            </div>
+
+            <div class="modal-footer">
+              <slot name="footer">
+                <button class="modal-default-button" @click="$emit('close')">
+                  Cancel
+                </button>
+              </slot>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- app -->
+    <div id="app">
+        <div class="draggable-view">
+            <div class="draggable-view_header">
+                <h1>CAREERS</h1>
+            </div>
+            <div class="draggable-view_content">
+                <ul>
+                    <li>C/C++ Developer (All Levels)</li>
+                    <li>QC Intern-Japanese speaking</li>
+                    <li>Senior Frontend Developer</li>
+                </ul>
+
+                <div class="draggable-view_button">
+                    <button id="show-modal-one" @click="showModalOne = true">
+              Aplly C/C++
+            </button>
+                    <button id="show-modal-two" @click="showModalTwo = true">
+              Aplly QC
+            </button>
+                    <button id="show-modal-three" @click="showModalThree = true">
+              Aplly Frontend
+            </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- use the modal one  component -->
+        <modal v-if="showModalOne" @close="showModalOne = false">
+            <h3 slot="header">APPLY C/C++</h3>
+        </modal>
+
+        <!-- use the modal two component -->
+        <modal v-if="showModalTwo" @close="showModalTwo = false">
+            <h3 slot="header">APPLY QC</h3>
+        </modal>
+
+        <!-- use the modal three component -->
+        <modal v-if="showModalThree" @close="showModalThree = false">
+            <h3 slot="header">APPLY FRONTEND</h3>
+        </modal>
+    </div>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

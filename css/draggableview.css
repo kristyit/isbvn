@@ -1,0 +1,93 @@
+h1 {
+    font-weight: 300;
+    font-size: 1.8em;
+    margin: 0;
+}
+
+a {
+    color: #fff;
+}
+
+button {
+    background: #e94d1c;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.draggable-view {
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    min-height: 260px;
+    overflow: hidden;
+    margin: 30px auto;
+    position: relative;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+.draggable-view .draggable-view_header,
+.draggable-view_content {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.draggable-view .draggable-view_header {
+    background-color: #ff9900;
+}
+
+.draggable-view_content {
+    color: #333;
+    line-height: 1.5em;
+}
+
+.draggable-view_button {
+    width: 100%;
+    max-width: 250px;
+    margin: auto;
+}
+
+.draggable-view_button button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    .draggable-view_button {
+        margin: 10px;
+        text-align: center;
+        width: auto;
+        max-width: 100%;
+    }
+    .draggable-view_button button {
+        margin-left: 10px;
+        width: 160px;
+    }
+    .draggable-view_button button:first-of-type {
+        margin-left: 0;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+li {
+    padding: 5px 0;
+    list-style: none;
+    text-align: left;
+}
